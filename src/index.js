@@ -2,8 +2,7 @@
 
 module.exports = function towelSort(matrix) {
     if (!matrix) return [];
-
-    var mergetArr = matrix.reduce((acc, curr, index) => {
+    return matrix.reduce((acc, curr, index) => {
         return [
             ...acc,
             ...(index % 2
@@ -11,8 +10,4 @@ module.exports = function towelSort(matrix) {
                 : curr.sort((a, b) => a - b)),
         ];
     }, []);
-    /* var sortedArr = mergetArr.sort((a, b) => {
-        return a - b;
-    }); */
-    return mergetArr;
 };
